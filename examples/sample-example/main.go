@@ -19,7 +19,7 @@ func main() {
 
 // Example that detects how much noisy there is on a signal
 func handler(w http.ResponseWriter, _ *http.Request) {
-	signal, _ := dsp.ReadSignalFile("examples/signals/example-noisy-signal_31_hz.txt", 31)
+	signal, _ := dsp.ReadSignalStringValuesFile("examples/signals/example-noisy-signal_31_hz.txt", 31)
 
 	plot1 := plotSignal(signal, opts.Title{
 		Title:    "Original signal",

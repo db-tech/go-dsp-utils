@@ -8,22 +8,22 @@ import (
 	"strconv"
 )
 
-func ReadSignalFile(path string, sampleRate float64) (*Signal, error) {
+func ReadSignalStringValuesFile(path string, sampleRate float64) (*Signal, error) {
 	file, err := os.Open(path)
 	if err != nil {
 		return nil, err
 	}
 	defer file.Close()
 
-	return ReadSignal(file, sampleRate)
+	return ReadSignalStringValues(file, sampleRate)
 }
 
 func ReadSignalBytes(dataBytes []byte, sampleRate float64) (*Signal, error) {
 	reader := bytes.NewReader(dataBytes)
-	return ReadSignal(reader, sampleRate)
+	return ReadSignalStringValues(reader, sampleRate)
 }
 
-func ReadSignal(reader io.Reader, sampleRate float64) (*Signal, error) {
+func ReadSignalStringValues(reader io.Reader, sampleRate float64) (*Signal, error) {
 	signal := Signal{
 		SampleRate: sampleRate,
 		Signal:     make([]float64, 0),

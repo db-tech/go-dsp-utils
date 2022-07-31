@@ -19,7 +19,7 @@ func main() {
 
 func handler(w http.ResponseWriter, _ *http.Request) {
 	// 1. Read the initial signal
-	signal, _ := dsp.ReadSignalFile("examples/signals/example_signal_31_hz.txt", 31)
+	signal, _ := dsp.ReadSignalStringValuesFile("examples/signals/example_signal_31_hz.txt", 31)
 
 	plot1 := plotSignal(signal, opts.Title{
 		Title:    "Original signal",

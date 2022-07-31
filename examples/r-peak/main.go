@@ -17,7 +17,7 @@ func main() {
 }
 
 func handler(w http.ResponseWriter, _ *http.Request) {
-	signal, _ := dsp.ReadSignalFile("examples/signals/example_signal_31_hz.txt", 31)
+	signal, _ := dsp.ReadSignalStringValuesFile("examples/signals/example_signal_31_hz.txt", 31)
 
 	signal, err := signal.Normalize()
 

@@ -8,11 +8,11 @@ import (
 
 func main() {
 	// Read a signal sampled at 31hz
-	signal1, _ := dsp.ReadSignalFile("examples/signals/example_signal_31_hz.txt", 31)
+	signal1, _ := dsp.ReadSignalStringValuesFile("examples/signals/example_signal_31_hz.txt", 31)
 	fmt.Println(signal1)
 
 	// Read a signal sampled at 100Hz
-	signal2, _ := dsp.ReadSignalFile("examples/signals/example_signal_100_hz.txt", 100)
+	signal2, _ := dsp.ReadSignalStringValuesFile("examples/signals/example_signal_100_hz.txt", 100)
 	fmt.Println(signal2)
 
 	// Get a 10 second sample of the signal
